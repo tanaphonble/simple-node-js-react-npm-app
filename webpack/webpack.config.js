@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
+const path = require('path')
 
 const rules = {
   jsx: {
@@ -70,6 +71,11 @@ const splitChunksPlugin = new webpack.optimize.SplitChunksPlugin({
 })
 
 module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.join(__dirname, '../build'),
+    filename: '[name].[chunkhash].js'
+  },
   module: {
     rules: [rules.jsx, rules.css, rules.favicon, rules.assets]
   },

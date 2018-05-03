@@ -1,9 +1,6 @@
 pipeline {
-    agent none
+    agent any
 
-    environment { 
-        CI = 'true'
-    }
     stages {
         stage('A') {
             steps {

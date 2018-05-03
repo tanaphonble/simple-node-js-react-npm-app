@@ -7,7 +7,6 @@ echo 'correctly bundles React in production mode and optimizes the build for'
 echo 'the best performance.'
 set -x
 echo 'start docker'
-ssh -i /root/.ssh/id_rsa_nopass tanaphon@node-server "./run-docker.sh"
 npm run build
 set +x
 

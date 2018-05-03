@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('A') {
             steps {
-                sh 'echo "state A"'
+                sh 'echo "stage A"'
             }
         }
-        stage('B') {
+        stage('Test') {
             steps {
-                sh 'echo "state B"'
+                sh 'echo "stage B"'
             }
         }
-        stage('C') { 
+        stage('Deliver') { 
             steps {
-                sh 'echo "state C"'
+                sh 'ssh -i /root/.ssh/id_rsa_nopass tanaphon@node-server "./run-docker.sh" 
             }
         }
     }
